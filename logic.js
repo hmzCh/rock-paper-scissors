@@ -1,12 +1,7 @@
 let playerChoice,
     computerChoice
 
-playerChoice = prompt("Enter rock, paper or scissors").toLowerCase()
-computerChoice = (getComputerChoice())
-
-playRound(playerChoice, computerChoice)
-
-
+game()
 
 function getComputerChoice() {    
     
@@ -80,4 +75,13 @@ function playRound(playerChoice, computerChoice) {
 
     break
     }
+}
+
+function game () {
+    for (let looper = 0; looper < 5; looper++) {
+        playerChoice = prompt("Enter rock, paper or scissors").toLowerCase()
+        computerChoice = (getComputerChoice())
+
+        playRound(playerChoice, computerChoice)
+     }
 }
