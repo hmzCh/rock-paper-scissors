@@ -103,6 +103,10 @@ function displayScore(playerScore, computerScore) {
 
 function determineWinner (playerScore, computerScore) {
     if (playerScore > computerScore) {
-        return ""
+        return "The Player wins the game!"
+    } else if (computerScore > playerScore) {
+        return "The Computer wins the game!"
+    } else {
+        return "The game was a tie."
     }
 }
