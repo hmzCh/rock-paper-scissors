@@ -1,3 +1,9 @@
+let playerChoice,
+    computerChoice
+
+playerChoice = prompt("Enter rock, paper or scissors").toLowerCase()
+computerChoice = (getComputerChoice())
+
 function getComputerChoice() {
     let choice
     
@@ -13,5 +19,3 @@ switch (Math.floor(Math.random() * 3)) {
         break
 }
 }
-
-console.log(getComputerChoice())
