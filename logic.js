@@ -1,16 +1,20 @@
-let playerChoice,
-    computerChoice,
-    playerScore = 0,
-    computerScore = 0
-
 game()
 
 function game () {
+
+    let playerChoice
+    let computerChoice
+    let playerScore = 0
+    let computerScore = 0
+
     for (let looper = 0; looper < 5; looper++) {
         playerChoice = prompt("Enter rock, paper or scissors").toLowerCase()
         computerChoice = (getComputerChoice())
-        playRound(playerChoice, computerChoice)
+        console.log(playRound(playerChoice, computerChoice, playerScore, computerScore))
+        console.log(displayScore(playerScore, computerScore))
      }
+
+    console.log(determineWinner(playerScore, computerScore)) 
 }
 
 function getComputerChoice() {    
@@ -28,7 +32,7 @@ function getComputerChoice() {
     }
 }
 
-function playRound(playerChoice, computerChoice) {
+function playRound(playerChoice, computerChoice, playerScore, computerScore) {
 
     switch (playerChoice) {
     case "rock":
@@ -90,5 +94,15 @@ function playRound(playerChoice, computerChoice) {
         }
 
     break
+    }
+}
+
+function displayScore(playerScore, computerScore) {
+    return ("Score:\n" + "Player " + playerScore + "-" + computerScore + " Computer")
+}
+
+function determineWinner (playerScore, computerScore) {
+    if (playerScore > computerScore) {
+        return ""
     }
 }
