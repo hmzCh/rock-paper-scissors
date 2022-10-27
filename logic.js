@@ -1,7 +1,17 @@
 let playerChoice,
-    computerChoice
+    computerChoice,
+    playerScore = 0,
+    computerScore = 0
 
 game()
+
+function game () {
+    for (let looper = 0; looper < 5; looper++) {
+        playerChoice = prompt("Enter rock, paper or scissors").toLowerCase()
+        computerChoice = (getComputerChoice())
+        playRound(playerChoice, computerChoice)
+     }
+}
 
 function getComputerChoice() {    
     
@@ -25,15 +35,17 @@ function playRound(playerChoice, computerChoice) {
             
         switch (computerChoice) {
         case "rock":
-                console.log("Both chose rock, it's a tie.")
+                return "Both chose rock, it's a tie."
                 break
     
         case "paper":
-                console.log("Paper beats rock, you lose!")
+                return "Paper beats rock, you lose!"
+                computerScore++
                 break
 
         case "scissors":
-                console.log("Rock beats scissors, you win")
+                return "Rock beats scissors, you win"
+                playerScore++
                 break
         }
 
@@ -43,15 +55,17 @@ function playRound(playerChoice, computerChoice) {
 
         switch (computerChoice) {
         case "rock":
-                console.log("Paper beat's rock, you win!")
+                return "Paper beat's rock, you win!"
+                playerScore++
                 break
     
         case "paper":
-                console.log("Both chose paper, it's a tie.")
+                return "Both chose paper, it's a tie."
                 break
 
         case "scissors":
-                console.log("Scissors beats paper, you lose!")
+                return "Scissors beats paper, you lose!"
+                computerScore++
                 break
         }
 
@@ -61,27 +75,20 @@ function playRound(playerChoice, computerChoice) {
 
         switch (computerChoice) {
         case "rock":
-                console.log("Rock beat's scissors, you lose!")
+                return "Rock beat's scissors, you lose!"
+                computerScore++
                 break
     
         case "paper":
-                console.log("Scissors beats paper, you win!")
+                return "Scissors beats paper, you win!"
+                playerScore++
                 break
 
         case "scissors":
-                console.log("Both chose scissors, it's a tie.")
+                return "Both chose scissors, it's a tie."
                 break
         }
 
     break
     }
-}
-
-function game () {
-    for (let looper = 0; looper < 5; looper++) {
-        playerChoice = prompt("Enter rock, paper or scissors").toLowerCase()
-        computerChoice = (getComputerChoice())
-
-        playRound(playerChoice, computerChoice)
-     }
 }
