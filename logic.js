@@ -3,15 +3,23 @@ let computerChoice
 let playerScore = 0
 let computerScore = 0
 
-var rockButton = document. createElement("button")
-var paperButton = document. createElement("button")
-var scissorsButton = document. createElement("button")
+const rockButton = document. createElement("button")
+const paperButton = document. createElement("button")
+const scissorsButton = document. createElement("button")
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+
+    button.addEventListener('click', () => {
+      playRound;
+    });
+});
 
 playerChoice = prompt("Enter rock, paper or scissors").toLowerCase()
 computerChoice = (getComputerChoice())
 console.log(playRound())
 console.log(displayScore())
-
 console.log(determineWinner()) 
 
 function getComputerChoice() {    
