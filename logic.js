@@ -3,10 +3,14 @@ let computerChoice
 let playerScore = 0
 let computerScore = 0
 
-        playerChoice = prompt("Enter rock, paper or scissors").toLowerCase()
-        computerChoice = (getComputerChoice())
-        console.log(playRound())
-        console.log(displayScore())
+var rockButton = document. createElement("button")
+var paperButton = document. createElement("button")
+var scissorsButton = document. createElement("button")
+
+playerChoice = prompt("Enter rock, paper or scissors").toLowerCase()
+computerChoice = (getComputerChoice())
+console.log(playRound())
+console.log(displayScore())
 
 console.log(determineWinner()) 
 
