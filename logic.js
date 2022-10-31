@@ -3,12 +3,10 @@ let computerChoice
 let playerScore = 0
 let computerScore = 0
 
-for (let looper = 0; looper < 5; looper++) {
         playerChoice = prompt("Enter rock, paper or scissors").toLowerCase()
         computerChoice = (getComputerChoice())
         console.log(playRound())
         console.log(displayScore())
-}
 
 console.log(determineWinner()) 
 
