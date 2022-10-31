@@ -2,25 +2,51 @@ let playerChoice
 let computerChoice
 let playerScore = 0
 let computerScore = 0
+let roundsPlayed = 0
 
-const rockButton = document. createElement("button")
-const paperButton = document. createElement("button")
-const scissorsButton = document. createElement("button")
+const body = document.querySelector("body")
+
+const roundResults = document.createElement("div")
+body.classList.add("roundResults")
+body.appendChild(roundResults)
+const scoreboard = document.createElement("div")
+body.classList.add("scoreboard")
+body.appendChild(scoreboard)
+
+const rockButton = document.createElement("button")
+body.classList.add("rockButton")
+rockButton.id = "rock"
+rockButton.textContent = "Rock"
+body.appendChild(rockButton)
+const paperButton = document.createElement("button")
+body.classList.add("paperButton")
+paperButton.id = "paper"
+paperButton.textContent = "Paper"
+body.appendChild(paperButton)
+const scissorsButton = document.createElement("button")
+body.classList.add("scissorsButton")
+scissorsButton.id = "scissors"
+scissorsButton.textContent = "Scissors"
+body.appendChild(scissorsButton)
 
 const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
-
     button.addEventListener('click', () => {
-      playRound;
+        computerChoice = (getComputerChoice())
+        roundResults.textContent = playRound(button.id);
+        scoreboard.textContent = displayScore()
+        roundsPlayed++
+
+        if (roundsPlayed == 5) {
+            const matchResult = document.createElement("div")
+            body.classList.add("matchResult")
+            body.appendChild(matchResult)
+            matchResult.textContent = determineWinner()
+        }
+
     });
 });
-
-playerChoice = prompt("Enter rock, paper or scissors").toLowerCase()
-computerChoice = (getComputerChoice())
-console.log(playRound())
-console.log(displayScore())
-console.log(determineWinner()) 
 
 function getComputerChoice() {    
     
@@ -37,9 +63,9 @@ function getComputerChoice() {
     }
 }
 
-function playRound() {
+function playRound(selectedButton) {
 
-    switch (playerChoice) {
+    switch (selectedButton) {
     case "rock":
             
         switch (computerChoice) {
